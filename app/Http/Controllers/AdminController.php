@@ -45,8 +45,7 @@
 				return redirect()->route('login');
 			}
 
-
-			if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+			if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 1])) {
 			    return redirect()->route('dashboard');
 			}
 			else{
